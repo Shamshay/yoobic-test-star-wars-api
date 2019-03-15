@@ -1,0 +1,7 @@
+{
+  "name": "YOOBIC Test - Star Wars API",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
