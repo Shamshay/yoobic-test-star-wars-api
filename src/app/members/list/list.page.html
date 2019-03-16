@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Star Wars Characters</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card (click)="goToDetails(p)" *ngFor="let p of peopleData" color="light">
+    <ion-card-header>
+      <img src="./../../../assets/images/cast.jpg">
+      <ion-card-subtitle>Star Wars Character</ion-card-subtitle>
+      <ion-card-title>{{ p.name }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Gender: {{ p.gender }}
+      <br>
+      Hair Color: {{ p.hair_color }}
+      <br>
+      Height: {{ p.height }}
+      <br>
+      Birth Year: {{ p.birth_year }}
+    </ion-card-content>
+  </ion-card>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

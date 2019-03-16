@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Character Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card color="light" height="100%">
+    <ion-card-header>
+      <img src="./../../../assets/images/cast.jpg">
+      <ion-card-subtitle>Star Wars Character</ion-card-subtitle>
+      <ion-card-title>{{character.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-col>
+              Gender:
+            </ion-col>
+            <ion-col>
+              {{ character.gender }}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              Hair Color:
+            </ion-col>
+            <ion-col>
+              {{ character.hair_color }}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              Height:
+            </ion-col>
+            <ion-col>
+              {{ character.height }}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              Birth Year:
+            </ion-col>
+            <ion-col>
+              {{ character.birth_year }}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              Homeworld:
+            </ion-col>
+            <ion-col>
+              {{ extraInfo.homeworld }}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              Species:
+            </ion-col>
+            <ion-col>
+              {{ extraInfo.species }}
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-row>
+          <ion-col>
+            Starships used/owned:
+          </ion-col>
+          <ion-col>
+            <ion-row *ngFor="let s of extraInfo.starships">
+              {{ s }}
+            </ion-row>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            Vehicles used/owned:
+          </ion-col>
+          <ion-col>
+            <ion-row *ngFor="let v of extraInfo.vehicles">
+              {{ v }}
+            </ion-row>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+              Appeared in:
+            </ion-col>
+            <ion-col>
+              <ion-row *ngFor="let f of extraInfo.films">
+                {{ f }}
+              </ion-row>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToList()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

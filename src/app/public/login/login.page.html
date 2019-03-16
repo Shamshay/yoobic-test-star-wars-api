@@ -1,0 +1,45 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+          <ion-avatar>
+          </ion-avatar>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+          Sign In
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-input type="text" placeholder="Email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+          <ion-button shape="round" expand="block" color="secondary" routerLink="/register" routerDirection="forward">Sign Up</ion-button>
+      </ion-col>
+      <ion-col>
+          <ion-button shape="round" (click)="login()" expand="block">Sign In</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
